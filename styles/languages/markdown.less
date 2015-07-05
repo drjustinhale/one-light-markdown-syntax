@@ -1,44 +1,63 @@
 // Gutter colors
 @heading-ink: @syntax-fg;
-
+@light-ink: fade(@heading-ink, 30%);
+.variable {
+  &.unordered.list {
+    color: @light-ink;
+    font-weight: bold;
+  }
+}
 .markup {
   &.strike {
     text-decoration: line-through;
   }
   &.heading {
-    font-weight: normal;
+    font-weight: bold;
     font-family: sans-serif;
     position: relative;
-    &.heading-1.gfm {
-      color: @heading-ink;
-      font-size: 135%;
-      bottom: 0.15em;
-      opacity: 1.0;
-    }
-    &.heading-2.gfm {
-      color: @heading-ink;
-      font-size: 125%;
-      bottom: 0.10em;
-      opacity: 0.95;
-    }
-    &.heading-3.gfm {
-      color: @heading-ink;
-      font-size: 115%;
-      bottom: 0.05em;
-      opacity: 0.90;
-    }
+    &.heading-1.gfm,
+    &.heading-2.gfm,
+    &.heading-3.gfm,
     &.heading-4.gfm,
     &.heading-5.gfm,
     &.heading-6.gfm {
       color: @heading-ink;
-      font-size: 105%;
+    }
+    &.heading-1.gfm {
+      bottom: 0.15em;
+      font-size: 150%;
+      opacity: 1.0;
+    }
+    &.heading-2.gfm {
+      bottom: 0.10em;
+      font-size: 140%;
+      opacity: 0.95;
+    }
+    &.heading-3.gfm {
+      font-size: 130%;
+      bottom: 0.05em;
+      opacity: 0.90;
+    }
+    &.heading-4.gfm {
+      font-size: 120%;
+      bottom: 0.05em;
+      opacity: 0.85;
+    }
+    &.heading-5.gfm {
+      font-size: 115%;
+      bottom: 0.05em;
+      opacity: 0.85;
+    }
+    &.heading-6.gfm {
+      font-size: 110%;
       bottom: 0.05em;
       opacity: 0.85;
     }
 
     // marker of headings
     &.marker.gfm {
-      color: fade(@heading-ink, 50%);
+      color: @light-ink;
+      font-weight: normal;
     }
   }
 }
