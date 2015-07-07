@@ -1,15 +1,46 @@
-// Gutter colors
-@heading-ink: @syntax-fg;
-@light-ink: fade(@heading-ink, 30%);
+// markup
+@markup-tag-color: fade(@text-color-subtle, 40%);
+@markup-bold-color: darken(@text-color-success, 35%);
+@markup-italic-color: darken(@text-color-success, 35%);
+// headings
+@heading-color: @text-color-highlight;
+// quotes
+@quote-color: fade(@text-color-subtle, 80%); // light grey
+@quote-format-color: #88aa88; // light green
 .variable {
   &.unordered.list {
-    color: @light-ink;
+    color: @markup-tag-color;
     font-weight: bold;
   }
 }
+.comment.quote {
+  color: @quote-color;
+  font-family: Consolas, Lucida Console;
+  font-style: normal;
+  .italic {
+    color: @quote-format-color;
+    font-style: italic;
+  }
+  .bold {
+    color: @quote-format-color;
+    font-weight: bold;
+  }
+  .support {
+    color: @markup-tag-color;
+  }
+}
 .markup {
+  &.bold {
+    color: @markup-bold-color;
+  }
+  &.italic {
+    color: @markup-italic-color;
+  }
   &.strike {
     text-decoration: line-through;
+  }
+  &.raw {
+    font-family: monospace;
   }
   &.heading {
     font-weight: bold;
@@ -21,7 +52,7 @@
     &.heading-4.gfm,
     &.heading-5.gfm,
     &.heading-6.gfm {
-      color: @heading-ink;
+      color: @heading-color;
     }
     &.heading-1.gfm {
       bottom: 0.15em;
@@ -55,8 +86,8 @@
     }
 
     // marker of headings
-    &.marker.gfm {
-      color: @light-ink;
+    .marker.gfm {
+      color: @markup-tag-color;
       font-weight: normal;
     }
   }
