@@ -1,94 +1,45 @@
-// markup
-@markup-tag-color: fade(@text-color-subtle, 40%);
-@markup-bold-color: darken(@text-color-success, 35%);
-@markup-italic-color: darken(@text-color-success, 35%);
-// headings
-@heading-color: @text-color-highlight;
-// quotes
-@quote-color: fade(@text-color-subtle, 80%); // light grey
-@quote-format-color: #88aa88; // light green
-.variable {
-  &.unordered.list {
-    color: @markup-tag-color;
-    font-weight: bold;
-  }
-}
-.comment.quote {
-  color: @quote-color;
-  font-family: Consolas, Lucida Console;
-  font-style: normal;
-  .italic {
-    color: @quote-format-color;
-    font-style: italic;
-  }
-  .bold {
-    color: @quote-format-color;
-    font-weight: bold;
-  }
-  .support {
-    color: @markup-tag-color;
-  }
-}
+// Gutter colors
+@heading-ink: @syntax-fg;
+
 .markup {
-  &.bold {
-    color: @markup-bold-color;
-  }
-  &.italic {
-    color: @markup-italic-color;
-  }
   &.strike {
     text-decoration: line-through;
   }
-  &.raw {
-    font-family: monospace;
-  }
   &.heading {
-    font-weight: bold;
     font-family: sans-serif;
     position: relative;
-    &.heading-1.gfm,
-    &.heading-2.gfm,
-    &.heading-3.gfm,
+    &.heading-1.gfm {
+      color: @heading-ink;
+      font-weight: 900;
+      font-size: 1.1em;
+      opacity: 1.0;
+      text-decoration: underline;
+    }
+    &.heading-2.gfm {
+      color: @heading-ink;
+      font-weight: 700;
+      font-size: 1.1em;
+      opacity: 0.95;
+      text-decoration: underline;
+    }
+    &.heading-3.gfm {
+      color: @heading-ink;
+      font-weight: bold;
+      font-size: 1em;
+      opacity: 0.90;
+    }
     &.heading-4.gfm,
     &.heading-5.gfm,
     &.heading-6.gfm {
-      color: @heading-color;
-    }
-    &.heading-1.gfm {
-      bottom: 0.15em;
-      font-size: 150%;
-      opacity: 1.0;
-    }
-    &.heading-2.gfm {
-      bottom: 0.10em;
-      font-size: 140%;
-      opacity: 0.95;
-    }
-    &.heading-3.gfm {
-      font-size: 130%;
-      bottom: 0.05em;
-      opacity: 0.90;
-    }
-    &.heading-4.gfm {
-      font-size: 120%;
-      bottom: 0.05em;
-      opacity: 0.85;
-    }
-    &.heading-5.gfm {
-      font-size: 115%;
-      bottom: 0.05em;
-      opacity: 0.85;
-    }
-    &.heading-6.gfm {
-      font-size: 110%;
-      bottom: 0.05em;
+      color: @heading-ink;
+      font-weight: bold;
+      font-size: 1em;
       opacity: 0.85;
     }
 
     // marker of headings
-    .marker.gfm {
-      color: @markup-tag-color;
-      font-weight: normal;
+    &.marker.gfm {
+      color: fade(@heading-ink, 50%);
     }
   }
 }
